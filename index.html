@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GGM · Comunicado Offsite · Mayo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --ink-2:#141414;
+    --line-dark: rgba(255,255,255,.18);
+    --line-dark-strong: rgba(255,255,255,.35);
+    --fg-dark:#EDEAE2;
+    --muted-dark:#8A8A82;
+
+    --cream:#F2EFE7;
+    --cream-2:#FBFAF6;
+    --ink-light:#333530;
+    --muted-light:#5D5E56;
+    --line-light: rgba(51,53,48,.18);
+
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink-light);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ---------- Generic blocks ---------- */
+  .dark{
+    background:var(--ink);
+    color:var(--fg-dark);
+  }
+  .cream{
+    background:var(--cream);
+    color:var(--ink-light);
+  }
+  .cream-paper{
+    background:var(--cream-2);
+    color:var(--ink-light);
+  }
+
+  .wrap{
+    max-width:1240px;
+    margin:0 auto;
+    padding:0 56px;
+  }
+
+  /* ---------- Masthead (dark) ---------- */
+  .masthead{
+    position:relative;
+    border-bottom:1px solid var(--line-dark);
+    padding:28px 0 24px;
+  }
+  .masthead-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:24px;
+    align-items:start;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .masthead-grid b{
+    color:var(--fg-dark);
+    font-weight:600;
+    display:block;
+    margin-bottom:4px;
+  }
+  .masthead-grid .mid{ text-align:center; }
+  .masthead-grid .right{ text-align:right; }
+
+  /* corner brackets */
+  .brackets{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+  }
+  .brackets::before,
+  .brackets::after,
+  .brackets > i::before,
+  .brackets > i::after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:14px;
+    border:1px solid var(--line-dark-strong);
+  }
+  .brackets::before{ top:14px; left:14px; border-right:0; border-bottom:0; }
+  .brackets::after{ top:14px; right:14px; border-left:0; border-bottom:0; }
+  .brackets > i::before{ bottom:14px; left:14px; border-right:0; border-top:0; }
+  .brackets > i::after{ bottom:14px; right:14px; border-left:0; border-top:0; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 72px;
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+    margin-bottom:36px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(44px, 7.4vw, 104px);
+    line-height:.98;
+    letter-spacing:-0.02em;
+    margin:0;
+    color:var(--fg-dark);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--muted-dark);
+  }
+  .hero .sub{
+    margin-top:40px;
+    max-width:680px;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:22px;
+    line-height:1.45;
+    color:var(--fg-dark);
+  }
+  .hero .meta-row{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:32px;
+    padding-top:24px;
+    border-top:1px solid var(--line-dark);
+  }
+  .meta-cell{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .meta-cell b{
+    display:block;
+    color:var(--fg-dark);
+    font-weight:500;
+    margin-bottom:6px;
+    letter-spacing:.18em;
+  }
+
+  /* ---------- Diagram band (dark) ---------- */
+  .diagram-band{
+    padding:24px 0 72px;
+  }
+  .diagram-band .head{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    padding:32px 0 24px;
+    border-top:1px solid var(--line-dark);
+  }
+  .diagram-band .head .l b,
+  .diagram-band .head .r b{
+    display:block;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+    font-weight:500;
+  }
+  .diagram-band .head h2{
+    margin:8px 0 0 0;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:34px;
+    line-height:1.05;
+    color:var(--fg-dark);
+  }
+  .diagram-band .head .r{ text-align:right; }
+  .diagram-band .head .r h2 em{ color:var(--muted-dark); font-style:italic; }
+
+  .diagram{
+    margin-top:8px;
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .diagram-legend{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--line-dark);
+  }
+  .diagram-legend div{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .diagram-legend div b{
+    display:block;
+    color:var(--fg-dark);
+    margin-bottom:6px;
+    font-weight:500;
+  }
+
+  /* ---------- Letter section (cream) ---------- */
+  .letter{
+    padding:120px 0;
+    background:var(--cream);
+  }
+  .letter .sec-head{
+    margin-bottom:56px;
+  }
+  .context-body{
+    max-width:780px;
+  }
+  .context-body .opener{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:32px;
+    line-height:1.3;
+    color:var(--ink-light);
+    margin:0 0 40px 0;
+    letter-spacing:-0.005em;
+  }
+  .context-body .opener em{ color:var(--muted-light); font-style:italic; }
+  .context-body p{
+    margin:0 0 22px 0;
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.65;
+    color:var(--ink-light);
+  }
+  .context-body p strong{ color:var(--ink-light); font-weight:700; }
+
+  /* legacy letter-grid styles (kept for safety, currently unused) */
+  .letter-grid{
+    display:grid;
+    grid-template-columns:240px 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  .letter .stamp{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-light);
+    line-height:1.8;
+  }
+  .letter .stamp b{
+    display:block;
+    color:var(--ink-light);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .letter p{
+    margin:0 0 24px 0;
+    font-family:var(--sans);
+    font-size:18px;
+    line-height:1.6;
+    max-width:680px;
+    color:var(--ink-light);
+  }
+  .letter p:first-of-type::first-line{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  .letter .opener{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:28px;
+    line-height:1.3;
+    color:var(--ink-light);
+    margin-bottom:32px;
+    max-width:680px;
+  }
+  .letter .opener em{ color:var(--muted-light); }
+
+  /* ---------- Section header (universal) ---------- */
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:24px;
+    padding:28px 0;
+    border-top:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .cream .sec-head, .cream-paper .sec-head{
+    border-color:var(--line-light);
+  }
+  .sec-head .l{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .cream .sec-head .l, .cream-paper .sec-head .l{
+    color:var(--muted-light);
+  }
+  .sec-head h2{
+    margin:0;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(28px, 4vw, 44px);
+    line-height:1.05;
+    color:var(--fg-dark);
+    letter-spacing:-0.01em;
+  }
+  .cream .sec-head h2, .cream-paper .sec-head h2{
+    color:var(--ink-light);
+  }
+  .sec-head h2 em{
+    font-style:italic;
+    color:var(--muted-dark);
+  }
+  .cream .sec-head h2 em, .cream-paper .sec-head h2 em{
+    color:var(--muted-light);
+  }
+  .sec-head .r{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+    text-align:right;
+  }
+  .cream .sec-head .r, .cream-paper .sec-head .r{ color:var(--muted-light); }
+
+  /* ---------- Commitments grid (dark) ---------- */
+  .commitments{
+    padding:0 0 80px;
+  }
+  .commit-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .commit{
+    padding:40px 32px 36px;
+    border-right:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+  }
+  .commit:nth-child(2n){ border-right:0; }
+  .commit:nth-last-child(-n+2){ border-bottom:0; }
+  .commit-num{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:24px;
+  }
+  .commit-num .dot{
+    width:6px;height:6px;background:var(--fg-dark);border-radius:50%;
+    display:inline-block;
+  }
+  .commit h3{
+    margin:0 0 16px 0;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:26px;
+    line-height:1.15;
+    color:var(--fg-dark);
+    letter-spacing:-0.005em;
+  }
+  .commit h3 em{ color:var(--muted-dark); font-style:italic; }
+  .commit p{
+    margin:0 0 24px 0;
+    font-family:var(--sans);
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--fg-dark);
+    max-width:42ch;
+  }
+  .commit p strong{ color:var(--fg-dark); }
+  .commit-viz{
+    height:120px;
+    margin-top:auto;
+    padding-top:24px;
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .commit-viz svg{ width:100%; height:100%; display:block; }
+  .commit-tag{
+    margin-top:20px;
+    padding-top:16px;
+    border-top:1px solid var(--line-dark);
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .commit-tag b{ color:var(--fg-dark); font-weight:500; }
+
+  /* ---------- Pull quote (cream) ---------- */
+  .quote{
+    background:var(--cream);
+    padding:140px 0;
+    text-align:center;
+  }
+  .quote blockquote{
+    margin:0 auto;
+    max-width:920px;
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(36px, 5vw, 64px);
+    line-height:1.1;
+    color:var(--ink-light);
+    letter-spacing:-0.01em;
+  }
+  .quote blockquote .punct{ color:var(--muted-light); font-style:italic; }
+  .quote .attrib{
+    margin-top:48px;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-light);
+  }
+  .quote .rule{
+    width:64px;
+    height:1px;
+    background:var(--ink-light);
+    margin:32px auto 0;
+  }
+
+  /* ---------- Asks (cream-paper) ---------- */
+  .asks{
+    background:var(--cream-2);
+    padding:96px 0 112px;
+  }
+  .ask-list{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0;
+    margin-top:8px;
+  }
+  .ask{
+    padding:40px 28px 36px 0;
+    border-top:1px solid var(--line-light);
+    position:relative;
+  }
+  .ask + .ask{ padding-left:28px; border-left:1px solid var(--line-light); }
+  .ask .n{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-light);
+    margin-bottom:24px;
+  }
+  .ask h3{
+    margin:0 0 14px 0;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:24px;
+    line-height:1.2;
+    color:var(--ink-light);
+  }
+  .ask h3 em{ color:var(--muted-light); font-style:italic; }
+  .ask p{
+    margin:0;
+    font-family:var(--sans);
+    font-size:15px;
+    line-height:1.6;
+    color:var(--ink-light);
+  }
+
+  /* ---------- Roadmap (dark) ---------- */
+  .roadmap{
+    padding:0 0 80px;
+  }
+  .timeline{
+    margin-top:48px;
+    padding:48px 0 24px;
+    position:relative;
+  }
+  .timeline-line{
+    position:absolute;
+    left:0;right:0;
+    top:84px;
+    height:1px;
+    background:var(--line-dark);
+  }
+  .timeline-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+    position:relative;
+  }
+  .tstop{
+    position:relative;
+    padding-top:0;
+  }
+  .tstop .when{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+    margin-bottom:24px;
+  }
+  .tstop .node{
+    width:14px;height:14px;border-radius:50%;
+    border:1px solid var(--line-dark-strong);
+    background:var(--ink);
+    position:relative;
+    margin-bottom:24px;
+  }
+  .tstop.now .node{
+    background:var(--fg-dark);
+    border-color:var(--fg-dark);
+    box-shadow:0 0 0 6px rgba(237,234,226,.08);
+  }
+  .tstop .label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--fg-dark);
+    font-weight:500;
+    margin-bottom:6px;
+  }
+  .tstop .desc{
+    font-family:var(--sans);
+    font-size:13.5px;
+    line-height:1.5;
+    color:var(--muted-dark);
+    max-width:24ch;
+  }
+  .tstop.now .desc{ color:var(--fg-dark); }
+
+  /* ---------- Closing (dark) ---------- */
+  .closing{
+    padding:80px 0 96px;
+    border-top:1px solid var(--line-dark);
+  }
+  .closing-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:64px;
+    align-items:end;
+  }
+  .closing .body p{
+    margin:0 0 18px 0;
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    color:var(--fg-dark);
+    max-width:56ch;
+  }
+  .closing .sign{
+    border-top:1px solid var(--fg-dark);
+    padding-top:24px;
+  }
+  .closing .sign .line{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:24px;
+    line-height:1.25;
+    color:var(--fg-dark);
+    margin-bottom:18px;
+  }
+  .closing .sign .line em{ color:var(--muted-dark); font-style:italic; }
+  .closing .sign .who{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+    line-height:1.8;
+  }
+  .closing .sign .who b{ color:var(--fg-dark); font-weight:500; display:block; }
+
+  /* ---------- Footer (dark) ---------- */
+  footer.dark{
+    border-top:1px solid var(--line-dark);
+    padding:24px 0;
+  }
+  .foot-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .foot-row b{ color:var(--fg-dark); font-weight:500; }
+
+  /* ---------- Tiny ascii rule ---------- */
+  .ascii-rule{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:.4em;
+    color:var(--muted-dark);
+    margin:0;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 880px){
+    .wrap{ padding:0 24px; }
+    .hero{ padding:64px 0 56px; }
+    .hero h1{ font-size:54px; }
+    .hero .meta-row{ grid-template-columns:repeat(2,1fr); gap:20px; }
+    .masthead-grid{ grid-template-columns:1fr; }
+    .masthead-grid .mid, .masthead-grid .right{ text-align:left; }
+    .letter-grid{ grid-template-columns:1fr; gap:32px; }
+    .commit-grid{ grid-template-columns:1fr; }
+    .commit{ border-right:0; border-bottom:1px solid var(--line-dark); }
+    .commit:last-child{ border-bottom:0; }
+    .diagram-band .head{ grid-template-columns:1fr; }
+    .diagram-band .head .r{ text-align:left; }
+    .diagram-legend{ grid-template-columns:repeat(2,1fr); }
+    .ask-list{ grid-template-columns:1fr; }
+    .ask + .ask{ padding-left:0; border-left:0; }
+    .timeline-line{ display:none; }
+    .timeline-grid{ grid-template-columns:1fr; gap:32px; }
+    .closing-grid{ grid-template-columns:1fr; gap:40px; align-items:start; }
+    .quote{ padding:80px 0; }
+    .letter{ padding:80px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== HERO / MASTHEAD (DARK) ============== -->
+<section class="dark" data-screen-label="01 Hero">
+  <div class="wrap masthead" style="position:relative;">
+    <div class="brackets"><i></i></div>
+    <div class="masthead-grid">
+      <div class="left">
+        <b>Grupo Garza Mercado</b>
+        Comunicado interno
+      </div>
+      <div class="mid">
+        <b>Offsite</b>
+        Mayo 2026
+      </div>
+      <div class="right">
+        <b>Santiago, N.L.</b>
+        13–15 Mayo 2026
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap hero">
+    <div class="eyebrow">— Memorandum de Offsite GGM 1T · Mayo 2026</div>
+    <h1>
+      Operación Transversal,<br>
+      <em>IA y Tecnología.</em>
+    </h1>
+    <p class="sub">
+      Síntesis de acuerdos.
+    </p>
+
+    <div class="meta-row">
+      <div class="meta-cell"><b>Quiénes</b>Directores GGM + GMC + GMD</div>
+      <div class="meta-cell"><b>Cuándo</b>13–15 Mayo 2026</div>
+      <div class="meta-cell"><b>Dónde</b>Santiago, Nuevo León</div>
+      <div class="meta-cell"><b>Para qué</b>Alinear la operación<br>transversal del grupo</div>
+    </div>
+  </div>
+
+  <!-- ============== DIAGRAM BAND ============== -->
+  <div class="wrap diagram-band">
+    <div class="head">
+      <div class="l">
+        <b>01 · Punto de partida</b>
+        <h2>Sistema fragmentado.</h2>
+      </div>
+      <div class="r">
+        <b>02 · Destino</b>
+        <h2>Sistema inteligente <em>y conectado.</em></h2>
+      </div>
+    </div>
+
+    <!-- Hero diagram: cloud → funnel → intent → lens → single source of truth -->
+    <svg class="diagram" viewBox="0 0 1240 340" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+
+      <!-- Z-ordered layer groups (populated by script) -->
+      <g id="d-tracers"></g>
+      <g id="d-cloud" fill="#EDEAE2"></g>
+      <g id="d-funnel"></g>
+      <g id="d-lens-web"></g>
+      <g id="d-lens-nodes" fill="#EDEAE2"></g>
+      <g id="d-converge"></g>
+      <g id="d-anchors"></g>
+      <g id="d-bound"></g>
+
+      <!-- Center node: Intención compartida -->
+      <g>
+        <circle cx="620" cy="170" r="38" fill="#0a0a0a" stroke="#EDEAE2" stroke-width="1"/>
+        <circle cx="620" cy="170" r="2" fill="#EDEAE2"/>
+        <text x="620" y="166" text-anchor="middle" fill="#EDEAE2"
+              font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4">INTENCIÓN</text>
+        <text x="620" y="178" text-anchor="middle" fill="#EDEAE2"
+              font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4">COMPARTIDA</text>
+        <text x="620" y="232" text-anchor="middle" fill="#8A8A82"
+              font-family="Helvetica, Arial, sans-serif" font-size="8.5">
+          Propósito y visión de grupo
+        </text>
+      </g>
+
+      <!-- SSOT node -->
+      <g>
+        <circle cx="1180" cy="170" r="48" fill="#0a0a0a" stroke="#EDEAE2" stroke-width="1"/>
+        <circle cx="1180" cy="170" r="2" fill="#EDEAE2"/>
+        <text x="1180" y="164" text-anchor="middle" fill="#EDEAE2"
+              font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4">SINGLE SOURCE</text>
+        <text x="1180" y="180" text-anchor="middle" fill="#EDEAE2"
+              font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4">OF TRUTH</text>
+      </g>
+
+      <!-- Stage labels along top -->
+      <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.6" fill="#8A8A82">
+        <text x="380" y="22">PAUSA</text>
+        <text x="475" y="22">ALINEACIÓN</text>
+        <text x="585" y="22">DECISIONES</text>
+        <text x="700" y="22">EJECUCIÓN</text>
+      </g>
+      <g stroke="rgba(237,234,226,.18)" stroke-dasharray="2 4">
+        <line x1="380" y1="32" x2="380" y2="295"/>
+        <line x1="475" y1="32" x2="475" y2="295"/>
+        <line x1="585" y1="32" x2="585" y2="295"/>
+        <line x1="700" y1="32" x2="700" y2="295"/>
+      </g>
+
+      <!-- Axis (bottom-left under cloud) -->
+      <g stroke="rgba(237,234,226,.25)">
+        <line x1="40" y1="318" x2="360" y2="318"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4" fill="#8A8A82">
+        <text x="40"  y="330">−3</text>
+        <text x="100" y="330">−2</text>
+        <text x="160" y="330">−1</text>
+        <text x="220" y="330">0</text>
+        <text x="280" y="330">+1</text>
+        <text x="340" y="330">+2</text>
+        <text x="40"  y="310" font-size="7">NIVEL DE MADUREZ OPERATIVA</text>
+      </g>
+    </svg>
+
+    <div class="diagram-legend">
+      <div><b>+ Datos dispersos</b>Información no confiable</div>
+      <div><b>+ Procesos aislados</b>Esfuerzo duplicado</div>
+      <div><b>+ Plataforma común</b>Equipos alineados</div>
+      <div><b>+ IA con criterio</b>Ventaja sostenible</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTEXTO Y PROPÓSITO (CREAM) ============== -->
+<section class="cream letter" data-screen-label="02 Contexto">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">— 02 · Contexto y propósito</div>
+      <h2>Contexto <em>y propósito.</em></h2>
+      <div class="r">— Offsite 1T · Mayo 2026</div>
+    </div>
+
+    <div class="context-body">
+      <p class="opener">
+        Durante tres días, los equipos directivos de GM Capital y
+        GM Desarrollos nos reunimos en un <em>offsite intermedio</em>
+        con dos objetivos centrales.
+      </p>
+      <p>
+        Primero, <strong>alinear la operación transversal del grupo</strong>:
+        datos, plataformas, servicios compartidos y comunicación.
+        Segundo, reflexionar sobre el impacto real que la inteligencia
+        artificial tiene hoy en los negocios — y lo que implica
+        quedarse atrás.
+      </p>
+      <p>
+        Este documento recoge los temas más relevantes que se
+        discutieron y los acuerdos concretos a los que llegamos.
+        No es una lista exhaustiva de todo lo que se habló:
+        es una síntesis de lo que acordamos hacer diferente a
+        partir de ahora.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COMMITMENTS (DARK) ============== -->
+<section class="dark commitments" data-screen-label="03 Compromisos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">— 03 · Nuestros cuatro compromisos</div>
+      <h2>Lo que va <em>a evolucionar.</em></h2>
+      <div class="r">— Aterriza<br>May–Nov 2026</div>
+    </div>
+
+    <div class="commit-grid">
+
+      <!-- 01 -->
+      <article class="commit">
+        <div class="commit-num"><span class="dot"></span>01 — Ordenar nuestra información</div>
+        <h3>Vamos a ordenar <em>nuestros datos.</em></h3>
+        <p>
+          Hoy la información del grupo está dispersa y con errores.
+          Empezamos un proyecto formal para limpiarla, estructurarla
+          y protegerla. <strong>Arrancó el 18 de mayo.</strong>
+        </p>
+
+        <div class="commit-viz" data-viz="order">
+          <!-- left: messy grid → right: ordered grid -->
+          <svg viewBox="0 0 480 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <g id="messy-grid" fill="#EDEAE2"></g>
+            <!-- arrow -->
+            <g stroke="#8A8A82" stroke-width="0.8" fill="none">
+              <line x1="220" y1="60" x2="270" y2="60"/>
+              <polyline points="262,55 270,60 262,65"/>
+            </g>
+            <g id="ordered-grid" fill="#EDEAE2"></g>
+          </svg>
+        </div>
+
+        <div class="commit-tag"><b>Estatus —</b> En marcha desde el 18 de mayo</div>
+      </article>
+
+      <!-- 02 -->
+      <article class="commit">
+        <div class="commit-num"><span class="dot"></span>02 — Plataforma común</div>
+        <h3>Notion como <em>nuestra biblioteca.</em></h3>
+        <p>
+          Manuales, políticas, directorio y minutas en un solo lugar.
+          Va a haber talleres para que aprendan a usarlo —
+          adaptado a cada área, a todos los niveles.
+        </p>
+
+        <div class="commit-viz">
+          <svg viewBox="0 0 480 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <!-- center hex -->
+            <g stroke="#EDEAE2" stroke-width="1" fill="none">
+              <polygon points="240,30 270,47 270,83 240,100 210,83 210,47"/>
+            </g>
+            <text x="240" y="62" text-anchor="middle" fill="#EDEAE2"
+                  font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4">NOTION</text>
+            <text x="240" y="74" text-anchor="middle" fill="#EDEAE2"
+                  font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.4">GGM</text>
+
+            <g stroke="rgba(237,234,226,.45)" stroke-width="0.7">
+              <line x1="210" y1="55" x2="110" y2="30"/>
+              <line x1="210" y1="75" x2="110" y2="65"/>
+              <line x1="210" y1="90" x2="110" y2="100"/>
+              <line x1="270" y1="55" x2="370" y2="30"/>
+              <line x1="270" y1="75" x2="370" y2="65"/>
+              <line x1="270" y1="90" x2="370" y2="100"/>
+            </g>
+            <g font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1.2" fill="#EDEAE2">
+              <text x="100" y="32" text-anchor="end">POLÍTICAS</text>
+              <text x="100" y="67" text-anchor="end">PROYECTOS</text>
+              <text x="100" y="102" text-anchor="end">MINUTAS</text>
+              <text x="380" y="32">CONOCIMIENTO</text>
+              <text x="380" y="67">PROCESOS</text>
+              <text x="380" y="102">DOCUMENTOS</text>
+            </g>
+            <g fill="#EDEAE2">
+              <circle cx="100" cy="30" r="2"/>
+              <circle cx="100" cy="65" r="2"/>
+              <circle cx="100" cy="100" r="2"/>
+              <circle cx="380" cy="30" r="2"/>
+              <circle cx="380" cy="65" r="2"/>
+              <circle cx="380" cy="100" r="2"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="commit-tag"><b>Estatus —</b> Roll-out con talleres por área</div>
+      </article>
+
+      <!-- 03 -->
+      <article class="commit">
+        <div class="commit-num"><span class="dot"></span>03 — Personas y Cultura</div>
+        <h3>Hacia <em>Personas y Cultura.</em></h3>
+        <p>
+          Recursos Humanos evoluciona hacia una función más
+          <strong>estratégica a nivel grupo</strong>: pasa de administración
+          operativa a <strong>personas, cultura, retención y crecimiento
+          de talento</strong>. Como parte de esto, se centraliza
+          a nivel <strong>Grupo Garza Mercado</strong> bajo una sola visión.
+        </p>
+        <p>
+          También se acordó establecer <strong>valores compartidos para
+          todo GGM</strong>, alineados y bajados de forma consistente
+          a todas las empresas del grupo.
+        </p>
+
+        <div class="commit-viz">
+          <svg viewBox="0 0 480 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <!-- diverging strands → ellipse "lens" → converging strands -->
+            <g stroke="rgba(237,234,226,.5)" stroke-width="0.7" fill="none">
+              <path d="M 30,30  C 130,30  170,55 240,60"/>
+              <path d="M 30,50  C 130,50  170,57 240,60"/>
+              <path d="M 30,70  C 130,70  170,63 240,60"/>
+              <path d="M 30,90  C 130,90  170,65 240,60"/>
+
+              <path d="M 240,60 C 310,55  350,30 450,30"/>
+              <path d="M 240,60 C 310,57  350,50 450,50"/>
+              <path d="M 240,60 C 310,63  350,70 450,70"/>
+              <path d="M 240,60 C 310,65  350,90 450,90"/>
+            </g>
+            <ellipse cx="240" cy="60" rx="28" ry="36" stroke="#EDEAE2" stroke-width="1" fill="none"/>
+            <g fill="#EDEAE2">
+              <circle cx="30" cy="30" r="1.6"/>
+              <circle cx="30" cy="50" r="1.6"/>
+              <circle cx="30" cy="70" r="1.6"/>
+              <circle cx="30" cy="90" r="1.6"/>
+              <circle cx="450" cy="30" r="1.6"/>
+              <circle cx="450" cy="50" r="1.6"/>
+              <circle cx="450" cy="70" r="1.6"/>
+              <circle cx="450" cy="90" r="1.6"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="commit-tag"><b>Estatus —</b> Valores GGM y nueva estructura en diseño</div>
+      </article>
+
+      <!-- 04 -->
+      <article class="commit">
+        <div class="commit-num"><span class="dot"></span>04 — Inteligencia Artificial</div>
+        <h3>Vamos a usar IA, <em>con orden.</em></h3>
+        <p>
+          La IA ya está en muchos trabajos. La vamos a integrar
+          con seguridad y datos limpios primero.
+          <strong>Por ahora no se asignan cuentas individuales</strong>
+          — estamos evaluando una a nivel grupo.
+        </p>
+
+        <div class="commit-viz" data-viz="net">
+          <svg viewBox="0 0 480 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <!-- neural net 4-5-5-4 -->
+            <g id="net" stroke="rgba(237,234,226,.35)" stroke-width="0.5" fill="#EDEAE2"></g>
+          </svg>
+        </div>
+
+        <div class="commit-tag"><b>Estatus —</b> Evaluación de IA grupal en curso</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== PULL QUOTE (CREAM) ============== -->
+<section class="quote" data-screen-label="04 Frase">
+  <div class="wrap">
+    <p class="ascii-rule">— — —   PRINCIPIO RECTOR   — — —</p>
+    <div class="rule" style="margin:24px auto 48px;"></div>
+    <blockquote>
+      <span class="punct">“</span>Los datos son parte
+      del patrimonio del grupo. Cuidarlos y usarlos bien
+      es una decisión <em>estratégica</em>, no un tema de tecnología.<span class="punct">”</span>
+    </blockquote>
+    <div class="attrib">— Dirección General GGM · Mayo 2026</div>
+  </div>
+</section>
+
+<!-- ============== ASKS (CREAM PAPER) ============== -->
+<section class="cream-paper asks" data-screen-label="05 Lo que pedimos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">— 04 · Sumarse al cambio</div>
+      <h2>Sumarse <em>al cambio.</em></h2>
+      <div class="r">— Aplica desde hoy</div>
+    </div>
+
+    <div class="ask-list">
+      <article class="ask">
+        <div class="n">01 / Software</div>
+        <h3>No compren <em>por su cuenta.</em></h3>
+        <p>
+          Pasen primero con TI — estamos consolidando licencias
+          a nivel grupo. Comprar individual nos sale más caro y
+          deja datos fuera del control del grupo.
+        </p>
+      </article>
+
+      <article class="ask">
+        <div class="n">02 / Seguridad</div>
+        <h3>Cuiden los datos <em>del grupo.</em></h3>
+        <p>
+          Cuando lleguen las nuevas reglas (doble factor, prueba
+          de phishing, accesos), sigan los pasos. No es trámite —
+          es protección al patrimonio.
+        </p>
+      </article>
+
+      <article class="ask">
+        <div class="n">03 / Cambio</div>
+        <h3>Apertura al cambio, <em>con paciencia.</em></h3>
+        <p>
+          Notion, juntas distintas, procesos nuevos. La curva
+          de aprendizaje vale la pena. Si algo no se entiende,
+          háblenlo con su jefe directo.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ROADMAP (DARK) ============== -->
+<section class="dark roadmap" data-screen-label="06 Qué sigue">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l">— 05 · Qué sigue</div>
+      <h2>Los siguientes pasos <em>de este año.</em></h2>
+      <div class="r">— Calendario tentativo</div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-grid">
+        <div class="tstop now">
+          <div class="when">13–15 Mayo 2026 — Ahora</div>
+          <div class="node"></div>
+          <div class="label">Offsite 1T</div>
+          <div class="desc">Alineación y decisiones. Donde estamos hoy.</div>
+        </div>
+        <div class="tstop">
+          <div class="when">Finales de Mayo 2026</div>
+          <div class="node" style="margin: 0px 0px 24px; border-radius: 600px"></div>
+          <div class="label">Presentación del proyecto</div>
+          <div class="desc">Datos y Tecnología a nivel grupo.</div>
+        </div>
+        <div class="tstop now">
+          <div class="when">18 Mayo — Dic 2026 · En curso</div>
+          <div class="node"></div>
+          <div class="label">Implementación · Datos y Tecnología</div>
+          <div class="desc">Proyecto activo todo el semestre, de mayo a diciembre.</div>
+        </div>
+        <div class="tstop">
+          <div class="when">Julio — Agosto 2026</div>
+          <div class="node"></div>
+          <div class="label">Offsite entre direcciones</div>
+          <div class="desc">Presupuesto, PLP y objetivos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="wrap closing">
+    <div class="closing-grid">
+      <div class="body">
+        <p>
+          En las próximas semanas, <strong>cada dirección les va a contar
+          cómo los afecta a ustedes en lo concreto.</strong> Si tienen dudas,
+          hablen con su jefe directo — y si quieren entender mejor el
+          panorama completo, este comunicado va a vivir en el Notion GGM.
+        </p>
+        <p>
+          Gracias por el compromiso de siempre. Lo que decidimos
+          en Santiago no fue una agenda nueva: fue ponerle nombre,
+          fechas y disciplina al trabajo que ya hacen.
+        </p>
+      </div>
+
+      <div class="sign">
+        <div class="line">Vamos hacia adelante, <em>juntos.</em></div>
+        <div class="who">
+          <b>Dirección General GGM</b>
+          GM Capital · GM Desarrollos
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="dark">
+    <div class="wrap foot-row">
+      <div><b>Grupo Garza Mercado</b> &nbsp; · &nbsp; Comunicado interno</div>
+      <div>Mayo 2026 &nbsp; · &nbsp; v1.0</div>
+      <div style="text-align:right;">GGM®</div>
+    </div>
+  </footer>
+</section>
+
+<script>
+  // ===== HERO DIAGRAM (dense version) =====
+  (function diagram(){
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.querySelector('svg.diagram');
+    if(!svg) return;
+    function E(tag, attrs, parent){
+      const e = document.createElementNS(ns, tag);
+      if(attrs) for(const k in attrs) e.setAttribute(k, attrs[k]);
+      if(parent) parent.appendChild(e);
+      return e;
+    }
+    const gById = id => svg.querySelector('#'+id);
+    let s = 1337;
+    const rnd = () => (s = (s*9301 + 49297) % 233280) / 233280;
+
+    const CENTER_X = 620, CENTER_Y = 170;
+    const SSOT_X = 1180,  SSOT_Y = 170;
+    const CENTER_R = 38, SSOT_R = 48;
+
+    // ---------- 1. CLOUD scatter (left) ----------
+    const cloud = gById('d-cloud');
+    const cloudCX = 220, cloudCY = 170;
+    const cloudW = 320, cloudH = 260;
+    const N_CLOUD = 620;
+    for (let i = 0; i < N_CLOUD; i++) {
+      const ang = rnd() * Math.PI * 2;
+      const rad = Math.pow(rnd(), 0.55) * (cloudW/2);
+      const aspect = cloudH / cloudW;
+      const x = cloudCX + Math.cos(ang) * rad + (rnd()-0.5) * 36;
+      const y = cloudCY + Math.sin(ang) * rad * aspect + (rnd()-0.5) * 26;
+      if (x < 60 || x > 380) continue;
+      if (y < 30 || y > 310) continue;
+      const isRect = rnd() < 0.22;
+      const sz = rnd() < 0.78 ? (0.7 + rnd()*1.4) : (1.8 + rnd()*2.0);
+      const op = 0.22 + rnd()*0.68;
+      if (isRect) {
+        E('rect',{x:x-sz/2,y:y-sz/2,width:sz,height:sz,'fill-opacity':op}, cloud);
+      } else {
+        E('circle',{cx:x,cy:y,r:sz/2,'fill-opacity':op}, cloud);
+      }
+    }
+
+    // ---------- 2. TRACER lines (horizontal leaders extending out left of cloud) ----------
+    const tracers = gById('d-tracers');
+    const tracerYs = [60,80,100,120,140,160];
+    for (const y of tracerYs) {
+      const x1 = 175;
+      const x2 = 240 + rnd()*60;
+      E('line',{x1,y1:y,x2,y2:y,stroke:'rgba(237,234,226,.35)','stroke-width':0.5}, tracers);
+      E('circle',{cx:x2,cy:y,r:1.6,fill:'#EDEAE2','fill-opacity':0.7}, tracers);
+    }
+
+    // ---------- 3. FUNNEL: many fine curves from cloud right edge → center node ----------
+    const funnel = gById('d-funnel');
+    const N_FUNNEL = 90;
+    for (let i = 0; i < N_FUNNEL; i++) {
+      // origin sampled from cloud right edge (x 300-360, y across full cloud height)
+      const sx = 280 + rnd()*80;
+      const sy = 40 + rnd()*260;
+      // control point biased toward middle horizontally + center vertically
+      const cx1 = 440 + rnd()*60;
+      const cy1 = sy + (CENTER_Y - sy) * (0.35 + rnd()*0.3);
+      // end on the left edge of center node
+      const targetAng = (rnd()-0.5) * 1.6;
+      const ex = CENTER_X - Math.cos(targetAng) * (CENTER_R - 2);
+      const ey = CENTER_Y + Math.sin(targetAng) * (CENTER_R - 2);
+      const op = 0.10 + rnd()*0.22;
+      E('path',{
+        d:`M ${sx},${sy} Q ${cx1},${cy1} ${ex},${ey}`,
+        stroke:`rgba(237,234,226,${op.toFixed(3)})`,
+        'stroke-width':0.4,
+        fill:'none'
+      }, funnel);
+    }
+    // a handful of brighter lead curves for structure
+    for (let i = 0; i < 7; i++) {
+      const sy = 40 + i*42;
+      const ey = CENTER_Y + (sy - CENTER_Y) * 0.06;
+      E('path',{
+        d:`M 320,${sy} Q 460,${sy + (CENTER_Y-sy)*0.55} ${CENTER_X - CENTER_R*0.95},${ey}`,
+        stroke:'rgba(237,234,226,.5)',
+        'stroke-width':0.55,
+        fill:'none'
+      }, funnel);
+    }
+
+    // ---------- 4. LENS region: intermediate node web ----------
+    const lensNodes = gById('d-lens-nodes');
+    const lensWeb = gById('d-lens-web');
+    const LENS_X0 = CENTER_X + CENTER_R;
+    const LENS_X1 = SSOT_X - SSOT_R - 130;
+    const LENS_W = LENS_X1 - LENS_X0;
+    const pts = [];
+    const N_LENS = 90;
+    for (let i = 0; i < N_LENS; i++) {
+      const tx = rnd();
+      const x = LENS_X0 + tx * LENS_W;
+      // lens half-height: 0 at edges, ~135 in middle (eye shape)
+      const halfH = 135 * Math.sin(Math.PI * (tx*0.95 + 0.025)) + 6;
+      const y = CENTER_Y + (rnd()*2 - 1) * halfH;
+      pts.push({x,y});
+      const isHi = rnd() < 0.18;
+      E('circle',{
+        cx:x, cy:y,
+        r: isHi ? 1.9 : 1.1,
+        'fill-opacity': isHi ? (0.7 + rnd()*0.3) : (0.35 + rnd()*0.4)
+      }, lensNodes);
+    }
+
+    function dist(a,b){ return Math.hypot(a.x-b.x, a.y-b.y); }
+    // nearest-neighbor web
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      const near = pts
+        .map((q,j) => ({q,j,d:dist(p,q)}))
+        .filter(x => x.j !== i && x.d < 65)
+        .sort((a,b) => a.d - b.d)
+        .slice(0, 2 + Math.floor(rnd()*2));
+      for (const n of near) {
+        const op = 0.10 + (1 - n.d/65)*0.18;
+        E('line',{
+          x1:p.x, y1:p.y, x2:n.q.x, y2:n.q.y,
+          stroke:`rgba(237,234,226,${op.toFixed(3)})`,
+          'stroke-width':0.35
+        }, lensWeb);
+      }
+    }
+
+    // links from CENTER node edge to nearest lens points (continues the flow)
+    const centerEdgePts = pts.filter(p => p.x < LENS_X0 + 80);
+    for (const p of centerEdgePts) {
+      const ang = Math.atan2(p.y - CENTER_Y, p.x - CENTER_X);
+      const cx = CENTER_X + Math.cos(ang) * (CENTER_R - 1);
+      const cy = CENTER_Y + Math.sin(ang) * (CENTER_R - 1);
+      E('line',{
+        x1:cx, y1:cy, x2:p.x, y2:p.y,
+        stroke:'rgba(237,234,226,.22)','stroke-width':0.4
+      }, lensWeb);
+    }
+
+    // ---------- 5. ANCHOR labels (the 4 commitments) ----------
+    const anchorsG = gById('d-anchors');
+    const anchors = [
+      { y: 60,  label:'DATA INTEGRITY',     sub:'Datos confiables y gobernados' },
+      { y:118,  label:'NOTION SYSTEM',      sub:'Sistema operativo del grupo' },
+      { y:222,  label:'PERSONAS Y CULTURA', sub:'Estructura y valores compartidos' },
+      { y:280,  label:'AI ADOPTION',        sub:'IA integrada con criterio' },
+    ];
+    const AX = 940;
+    for (const a of anchors) {
+      // anchor dot
+      E('circle',{cx:AX, cy:a.y, r:2.6, fill:'#EDEAE2'}, anchorsG);
+      // small leader line to label
+      E('line',{x1:AX+5, y1:a.y, x2:AX+18, y2:a.y, stroke:'rgba(237,234,226,.7)','stroke-width':0.6}, anchorsG);
+      // label
+      const t = E('text',{x:AX+22, y:a.y+3, fill:'#EDEAE2',
+        'font-family':'IBM Plex Mono, monospace','font-size':9,'letter-spacing':1.6}, anchorsG);
+      t.textContent = a.label;
+      // sublabel
+      const st = E('text',{x:AX+22, y:a.y+15, fill:'#8A8A82',
+        'font-family':'Helvetica, Arial, sans-serif','font-size':8.5}, anchorsG);
+      st.textContent = a.sub;
+      // also connect anchor into web (to nearby lens points)
+      const near = pts
+        .map((q,j) => ({q,j,d:Math.hypot(AX-q.x, a.y-q.y)}))
+        .sort((x,y) => x.d - y.d).slice(0,5);
+      for (const n of near) {
+        if (n.d > 100) continue;
+        E('line',{
+          x1:AX, y1:a.y, x2:n.q.x, y2:n.q.y,
+          stroke:'rgba(237,234,226,.25)','stroke-width':0.4
+        }, lensWeb);
+      }
+    }
+
+    // ---------- 6. CONVERGE: anchors + rightmost lens nodes → SSOT ----------
+    const converge = gById('d-converge');
+    for (const a of anchors) {
+      // smooth curve from anchor to SSOT left edge
+      const ang = Math.atan2(SSOT_Y - a.y, SSOT_X - AX);
+      const ex = SSOT_X - Math.cos(ang)*(SSOT_R - 1);
+      const ey = SSOT_Y - Math.sin(ang)*(SSOT_R - 1);
+      E('path',{
+        d:`M ${AX},${a.y} Q ${(AX+SSOT_X)/2 + 10},${(a.y+SSOT_Y)/2} ${ex},${ey}`,
+        stroke:'rgba(237,234,226,.55)','stroke-width':0.55,fill:'none'
+      }, converge);
+    }
+    // rightmost lens nodes also feed SSOT (subtle)
+    const rightPts = pts.filter(p => p.x > LENS_X1 - 60);
+    for (const p of rightPts) {
+      const ang = Math.atan2(SSOT_Y - p.y, SSOT_X - p.x);
+      const ex = SSOT_X - Math.cos(ang)*(SSOT_R - 1);
+      const ey = SSOT_Y - Math.sin(ang)*(SSOT_R - 1);
+      E('line',{
+        x1:p.x, y1:p.y, x2:ex, y2:ey,
+        stroke:'rgba(237,234,226,.2)','stroke-width':0.35
+      }, converge);
+    }
+
+    // ---------- 7. Dotted bounding ellipse around lens ----------
+    const bound = gById('d-bound');
+    E('ellipse',{
+      cx:(CENTER_X+SSOT_X)/2, cy:CENTER_Y,
+      rx:(SSOT_X-CENTER_X)/2 + 30, ry:148,
+      fill:'none',
+      stroke:'rgba(237,234,226,.18)','stroke-width':0.5,
+      'stroke-dasharray':'2 4'
+    }, bound);
+  })();
+</script>
+
+<script>
+  // Populate commit-viz SVGs from HTML context (not inside <svg>, which would
+  // mis-parse `<` operators as element starts).
+  (function(){
+    const ns = "http://www.w3.org/2000/svg";
+
+    // --- 01 / messy → ordered grid ---
+    (function order(){
+      const wrap = document.querySelector('[data-viz="order"]');
+      if(!wrap) return;
+      const messy = wrap.querySelector('#messy-grid');
+      const ordered = wrap.querySelector('#ordered-grid');
+      let s = 42;
+      const rnd = () => (s = (s*9301 + 49297) % 233280) / 233280;
+      for (let y = 0; y < 7; y++){
+        for (let x = 0; x < 11; x++){
+          if (rnd() < 0.85){
+            const px = 20 + x*15 + (rnd()-0.5)*4;
+            const py = 15 + y*13 + (rnd()-0.5)*4;
+            const r = document.createElementNS(ns,'rect');
+            const sz = rnd() < 0.5 ? 2 : 3.2;
+            r.setAttribute('x', px - sz/2);
+            r.setAttribute('y', py - sz/2);
+            r.setAttribute('width', sz);
+            r.setAttribute('height', sz);
+            r.setAttribute('fill-opacity', 0.4 + rnd()*0.6);
+            messy.appendChild(r);
+          }
+        }
+      }
+      for (let y = 0; y < 7; y++){
+        for (let x = 0; x < 11; x++){
+          const c = document.createElementNS(ns,'circle');
+          c.setAttribute('cx', 290 + x*15);
+          c.setAttribute('cy', 15 + y*13);
+          c.setAttribute('r', 1.6);
+          c.setAttribute('fill-opacity', 0.9);
+          ordered.appendChild(c);
+        }
+      }
+    })();
+
+    // --- 04 / neural net 4-5-5-4 ---
+    (function net(){
+      const wrap = document.querySelector('[data-viz="net"]');
+      if(!wrap) return;
+      const g = wrap.querySelector('#net');
+      const layers = [4,5,5,4];
+      const xStart = 50, xEnd = 430, yTop = 25, yBot = 95;
+      const cols = layers.length;
+      const pts = [];
+      for (let i = 0; i < cols; i++){
+        const x = xStart + (xEnd - xStart) * (i / (cols - 1));
+        const n = layers[i];
+        const col = [];
+        for (let j = 0; j < n; j++){
+          const y = yTop + (yBot - yTop) * (j / (n - 1));
+          col.push({x, y});
+        }
+        pts.push(col);
+      }
+      for (let i = 0; i < cols - 1; i++){
+        for (const a of pts[i]){
+          for (const b of pts[i+1]){
+            const l = document.createElementNS(ns,'line');
+            l.setAttribute('x1', a.x); l.setAttribute('y1', a.y);
+            l.setAttribute('x2', b.x); l.setAttribute('y2', b.y);
+            g.appendChild(l);
+          }
+        }
+      }
+      for (const col of pts){
+        for (const p of col){
+          const c = document.createElementNS(ns,'circle');
+          c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', 2);
+          g.appendChild(c);
+        }
+      }
+    })();
+  })();
+</script>
+
+</body>
+</html>
